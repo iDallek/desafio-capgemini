@@ -7,7 +7,7 @@ public class AsteriskLadderTest {
 
     @Test
     @DisplayName("Should create() return valid asterisk ladder if valid argument is provided")
-    public void test2() {
+    public void test() {
         AsteriskLadder SUT = new AsteriskLadder();
 
         String[] validResult = {
