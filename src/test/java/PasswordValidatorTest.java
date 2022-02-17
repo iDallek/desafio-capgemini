@@ -4,9 +4,9 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 /*
-    ● Possui no mínimo 6 caracteres.
-    ● Contém no mínimo 1 digito.
-    ● Contém no mínimo 1 letra em minúsculo.
+    -● Possui no mínimo 6 caracteres.
+    -● Contém no mínimo 1 digito.
+    -● Contém no mínimo 1 letra em minúsculo.
     ● Contém no mínimo 1 letra em maiúsculo.
     ● Contém no mínimo 1 caractere especial. Os caracteres especiais são: !@#$%^&*()-+
 */
@@ -48,6 +48,16 @@ public class PasswordValidatorTest {
         String input = "Ya3&ab".replaceAll("[a-z]","A");
 
         Assertions.assertEquals("Error: Must contain at least 1 lowercase letter", SUT.validate(input));
+    }
+
+    @Test
+    @DisplayName("Should validate() returns string with error details if the password does not have any capital letters provided")
+    public void test4() {
+        PasswordValidator SUT = new PasswordValidator();
+
+        String input = "Ya3&ab".replaceAll("[A-Z]","a");
+
+        Assertions.assertEquals("Error: Must contain at least 1 capital letter", SUT.validate(input));
     }
 
 }
