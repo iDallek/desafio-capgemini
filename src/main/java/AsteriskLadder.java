@@ -17,13 +17,8 @@ public class AsteriskLadder {
 
             String line = "";
 
-            for (int in = 0; in < qtyWhitespaces; in++) {
-                line += " ";
-            }
-
-            for (int in = 0; in < qtyAsterisks; in++) {
-                line += "*";
-            }
+            line += " ".repeat(Math.max(0, qtyWhitespaces));
+            line += "*".repeat(Math.max(0, qtyAsterisks));
 
             ladder += line + "\n";
         }
