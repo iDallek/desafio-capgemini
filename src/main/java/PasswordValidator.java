@@ -1,9 +1,5 @@
 public class PasswordValidator {
 
-    public static void main(String[] args) {
-        System.out.println("Ensure use validate method ;)");
-    }
-
     public String validate(String password) {
 
         int remainChars = validateLength(password);
