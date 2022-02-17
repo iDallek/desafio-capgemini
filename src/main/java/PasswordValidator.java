@@ -22,6 +22,11 @@ public class PasswordValidator {
             return "Error: Must contain at least 1 capital letter";
         }
 
+        boolean containSpecialCharacter = hasSpecialCharacter(password);
+        if (!containSpecialCharacter) {
+            return "Error: Must contain at least 1 special character";
+        }
+
         return "success";
     }
 
@@ -58,7 +63,7 @@ public class PasswordValidator {
         return containLowercaseLetter;
     }
 
-   public static boolean hasCapitalLetter(String password) {
+    public static boolean hasCapitalLetter(String password) {
         char[] chars = password.toCharArray();
         boolean containCapitalLetter = false;
 
@@ -69,6 +74,10 @@ public class PasswordValidator {
         }
 
         return containCapitalLetter;
+    }
+
+    public static boolean hasSpecialCharacter(String password) {
+        return password.matches("[a-zA-Z.? ]*");
     }
 
 }
