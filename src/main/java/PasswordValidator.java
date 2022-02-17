@@ -17,6 +17,11 @@ public class PasswordValidator {
             return "Error: Must contain at least 1 lowercase letter";
         }
 
+        boolean containCapitalLetter = hasCapitalLetter(password);
+        if (!containCapitalLetter) {
+            return "Error: Must contain at least 1 capital letter";
+        }
+
         return "success";
     }
 
@@ -51,6 +56,19 @@ public class PasswordValidator {
         }
 
         return containLowercaseLetter;
+    }
+
+   public static boolean hasCapitalLetter(String password) {
+        char[] chars = password.toCharArray();
+        boolean containCapitalLetter = false;
+
+        for (char c : chars) {
+            if (Character.isUpperCase(c)) {
+                containCapitalLetter = true;
+            }
+        }
+
+        return containCapitalLetter;
     }
 
 }
