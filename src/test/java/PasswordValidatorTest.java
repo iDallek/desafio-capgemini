@@ -35,9 +35,19 @@ public class PasswordValidatorTest {
     public void test2() {
         PasswordValidator SUT = new PasswordValidator();
 
-        String input =  "Ya3&ab".replaceAll("[0-9]","a");
+        String input = "Ya3&ab".replaceAll("[0-9]","a");
 
         Assertions.assertEquals("Error: Must contain at least 1 digit", SUT.validate(input));
+    }
+
+    @Test
+    @DisplayName("Should validate() returns string with error details if the password has no lowercase letter provided")
+    public void test3() {
+        PasswordValidator SUT = new PasswordValidator();
+
+        String input = "Ya3&ab".replaceAll("[a-z]","A");
+
+        Assertions.assertEquals("Error: Must contain at least 1 lowercase letter", SUT.validate(input));
     }
 
 }
