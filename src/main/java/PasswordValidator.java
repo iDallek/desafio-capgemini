@@ -12,6 +12,11 @@ public class PasswordValidator {
             return "Error: Must contain at least 1 digit";
         }
 
+        boolean containLowercaseLetter = hasLowercaseLetter(password);
+        if (!containLowercaseLetter) {
+            return "Error: Must contain at least 1 lowercase letter";
+        }
+
         return "success";
     }
 
@@ -33,6 +38,19 @@ public class PasswordValidator {
         }
 
         return containNumber;
+    }
+
+    public static boolean hasLowercaseLetter(String password) {
+        char[] chars = password.toCharArray();
+        boolean containLowercaseLetter = false;
+
+        for (char c : chars) {
+            if (Character.isLowerCase(c)) {
+                containLowercaseLetter = true;
+            }
+        }
+
+        return containLowercaseLetter;
     }
 
 }
