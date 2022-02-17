@@ -9,7 +9,7 @@ public class AsteriskLadder {
     }
 
     public String create(int number) {
-        String ladder = "";
+        StringBuilder ladder = new StringBuilder();
 
         for (int i = 1; i <= number; i++) {
             int qtyWhitespaces = number - i;
@@ -20,10 +20,10 @@ public class AsteriskLadder {
             line += " ".repeat(Math.max(0, qtyWhitespaces));
             line += "*".repeat(Math.max(0, qtyAsterisks));
 
-            ladder += line + "\n";
+            ladder.append(line).append("\n");
         }
 
-        return ladder;
+        return ladder.toString();
     }
 
 }
