@@ -1,13 +1,5 @@
 public class AsteriskLadder {
 
-    public static void main(String[] args) {
-        int defaultLadderArg = 6;
-
-        AsteriskLadder myInstance = new AsteriskLadder();
-
-        System.out.println(myInstance.create(defaultLadderArg));
-    }
-
     public String create(int number) {
         StringBuilder ladder = new StringBuilder();
 
