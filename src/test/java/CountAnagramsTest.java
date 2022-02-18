@@ -2,6 +2,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+@DisplayName("Question 03 - CountAnagrams")
 public class CountAnagramsTest {
     @Test
     @DisplayName("Should count() returns the number of anagrams found by single string")
