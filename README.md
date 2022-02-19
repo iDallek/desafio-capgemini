@@ -32,7 +32,7 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 1. `./gradlew clean build` no Linux/Mac ou `gradlew.bat clean build` no Windows.
 
-## ☕ Visualisando os Testes
+## 🤖 Visualisando os Testes
 
 <img src="public/coverage-tests.png" alt="Logo" >
 
